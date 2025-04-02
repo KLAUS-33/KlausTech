@@ -981,7 +981,7 @@ body {
 }
 
 /* Mobile Styles (screens smaller than 768px) */
-@media (max-width: 768px) {
+@media (max-width: 767px) {
     /* Minimize the sidebar */
     .aside {
         width: 60px;
@@ -1055,7 +1055,7 @@ body {
     }
 }
 
-/* Smaller phones (screens smaller than 480px) */
+/* Smaller phones (screens smaller than 480px)
 @media (max-width: 480px) {
     .aside {
         width: 50px;
@@ -1089,4 +1089,4 @@ body {
         font-size: 12px;
         padding: 8px 16px;
     }
-}
+} */
