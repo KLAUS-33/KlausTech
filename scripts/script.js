@@ -1,6 +1,6 @@
 // Typing Animation using Typed.js
 var typed = new Typed(".typing", {
-    strings: ["Software Engineer", "Web Developer", "Graphic Designer"],
+    strings: ["AI Engineer", "Data Analyst", "Graphic Designer"],
     typeSpeed: 100,
     backSpeed: 60,
     loop: true
