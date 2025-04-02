@@ -62,3 +62,7 @@ Prerequisites
 A modern web browser (e.g., Chrome, Firefox, Safari).
 A code editor (e.g., VS Code) for customization.
 Basic knowledge of HTML, CSS, and JavaScript.
+
+
+# NewPortfolio
+Testing deployment to trigger Vercel redeploy.
