@@ -1,31 +1,39 @@
 {
-  "version": 2,
-  "builds": [
-      {
-          "src": "**/*.html",
-          "use": "@vercel/static"
-      },
-      {
-          "src": "**/*.css",
-          "use": "@vercel/static"
-      },
-      {
-          "src": "**/*.js",
-          "use": "@vercel/static"
-      },
-      {
-          "src": "**/*.{jpg,jpeg,png,gif,svg}",
-          "use": "@vercel/static"
-      }
-  ],
-  "routes": [
-      {
-          "src": "/(.*).(css|js|jpg|jpeg|png|gif|svg)",
-          "dest": "/$1.$2"
-      },
-      {
-          "src": "/(.*)",
-          "dest": "/index.html"
-      }
-  ]
-}
+    "version": 2,
+    "builds": [
+        {
+            "src": "**/*.html",
+            "use": "@vercel/static"
+        },
+        {
+            "src": "**/*.css",
+            "use": "@vercel/static"
+        },
+        {
+            "src": "**/*.js",
+            "use": "@vercel/static"
+        },
+        {
+            "src": "**/*.{jpg,jpeg,png,gif,svg}",
+            "use": "@vercel/static"
+        },
+        {
+            "src": "**/*.pdf",
+            "use": "@vercel/static"
+        }
+    ],
+    "routes": [
+        {
+            "src": "/assets/(.*\\.pdf)",
+            "dest": "/assets/$1"
+        },
+        {
+            "src": "/(.*).(css|js|jpg|jpeg|png|gif|svg)",
+            "dest": "/$1.$2"
+        },
+        {
+            "src": "/(.*)",
+            "dest": "/index.html"
+        }
+    ]
+  }
