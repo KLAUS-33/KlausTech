@@ -827,7 +827,7 @@ ul {
 .style-switcher {
     position: fixed;
     right: 0;
-    top: 60px;
+    top: 15px;
     padding: 15px;
     width: 200px;
     background: var(--bg-black-100);
@@ -1131,5 +1131,73 @@ body.dark .contact-form .form-control:focus {
     }
     .section {
         padding: 0 15px;
+    }
+}
+/*home*/
+/* Home Section */
+.home-img {
+    position: relative;
+    flex: 0 0 40%;
+    max-width: 40%;
+    text-align: center;
+}
+
+.home-img img {
+    width: 300px;
+    height: 300px;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+/* Add Decorative Borders to Profile Image */
+.home-img::before,
+.home-img::after {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border: 5px solid var(--skin-color);
+}
+
+.home-img::before {
+    top: -15px;
+    right: -15px;
+    border-bottom: none;
+    border-left: none;
+}
+
+.home-img::after {
+    bottom: -15px;
+    left: -15px;
+    border-top: none;
+    border-right: none;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 767px) {
+    .home-img {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    .home-img img {
+        width: 250px;
+        height: 250px;
+    }
+
+    .home-img::before,
+    .home-img::after {
+        width: 40px;
+        height: 40px;
+    }
+
+    .home-img::before {
+        top: -10px;
+        right: -10px;
+    }
+
+    .home-img::after {
+        bottom: -10px;
+        left: -10px;
     }
 }
