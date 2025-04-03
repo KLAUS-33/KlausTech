@@ -955,3 +955,66 @@ ul {
     }
 }
  
+/* Contact Form */
+.contact-form .form-item {
+    margin-bottom: 20px;
+}
+
+.contact-form .form-group {
+    width: 100%;
+}
+
+.contact-form .form-control {
+    width: 100%;
+    padding: 10px 15px;
+    background: var(--bg-black-100);
+    border: 1px solid var(--bg-black-50);
+    border-radius: 5px;
+    color: var(--text-black-900);
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.contact-form .form-control:focus {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form textarea.form-control {
+    height: 140px;
+    resize: none;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 767px) {
+    .contact-form .form-item.col-6 {
+        width: 100%; /* Stack Name and Email fields vertically on mobile */
+    }
+
+    .contact-form .form-item.col-12 {
+        width: 100%;
+    }
+
+    .contact-form .form-control {
+        font-size: 14px; /* Slightly smaller font size on mobile */
+    }
+
+    .contact-form textarea.form-control {
+        height: 120px; /* Slightly shorter textarea on mobile */
+    }
+
+    .contact-form .btn {
+        width: 100%; /* Full-width button on mobile */
+        text-align: center;
+    }
+}
+
+/* Dark Theme Adjustments */
+body.dark .contact-form .form-control {
+    background: var(--bg-black-100);
+    border: 1px solid var(--bg-black-50);
+    color: var(--text-black-700);
+}
+
+body.dark .contact-form .form-control:focus {
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}

@@ -438,8 +438,8 @@
                 </div>
                 <h3 class="contact-title padd-15">SEND ME AN EMAIL</h3>
                 <h4 class="contact-sub-title padd-15">I'M VERY RESPONSIVE TO MESSAGES</h4>
-                <!--Contact Form-->
-                <div class="row">
+                <!-- Contact Form -->
+                <!-- <div class="row">
                     <div class="contact-form padd-15">
                        <div class="row">
                         <div class="form-item col-6 padd-15">
@@ -480,9 +480,47 @@
                    </div>
                 </div>
                     </div>
-                </div>
+                </div> -->
 
-                
+            <!--new contact form-->
+            <!-- Contact Form -->
+<div class="row">
+    <div class="contact-form padd-15">
+        <form id="contact-form">
+            <div class="row">
+                <div class="form-item col-6 padd-15">
+                    <div class="form-group">
+                        <input type="text" name="name" class="form-control" placeholder="Name" required>
+                    </div>
+                </div>
+                <div class="form-item col-6 padd-15">
+                    <div class="form-group">
+                        <input type="email" name="email" class="form-control" placeholder="Email" required>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-item col-12 padd-15">
+                    <div class="form-group">
+                        <input type="text" name="subject" class="form-control" placeholder="Subject" required>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-item col-12 padd-15">
+                    <div class="form-group">
+                        <textarea name="message" class="form-control" placeholder="Message" required></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-item col-12 padd-15">
+                    <button type="submit" class="btn">Send Message</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
             </div>
          </section>
         <!--Contact Section Ends-->
@@ -510,5 +548,27 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.1.0/typed.umd.js" integrity="sha512-+2pW8xXU/rNr7VS+H62aqapfRpqFwnSQh9ap6THjsm41AxgA0MhFRtfrABS+Lx2KHJn82UOrnBKhjZOXpom2LQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="scripts/script.js"></script>
 <script src="scripts/style-switcher.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script>
+    // Initialize EmailJS with your User ID
+    (function(){
+        emailjs.init("UIQ4LC1io9PlH6M4x"); // Replace with your EmailJS User ID (e.g., user_123456)
+    })();
+
+    // Handle form submission
+    document.getElementById('contact-form').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent default form submission
+
+        // Send the email using EmailJS
+        emailjs.sendForm('service_v5kgdns', 'template_2m46opk', this)
+            .then(function() {
+                alert('Message sent successfully!');
+                document.getElementById('contact-form').reset(); // Clear the form
+            }, function(error) {
+                alert('Failed to send message. Please try again later.');
+                console.log('EmailJS Error:', error);
+            });
+    });
+</script>
  </body>
 </html>
