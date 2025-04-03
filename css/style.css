@@ -1201,3 +1201,139 @@ body.dark .contact-form .form-control:focus {
         left: -10px;
     }
 }
+
+/*button overlapping*/
+/* Home Section */
+.home .container {
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.home .row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.home-info {
+    flex: 0 0 60%;
+    max-width: 60%;
+}
+
+.home-info h3 {
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+.home-info p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.home-img {
+    position: relative;
+    flex: 0 0 40%;
+    max-width: 40%;
+    text-align: center;
+}
+
+.home-img img {
+    width: 300px;
+    height: 300px;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+/* Decorative Borders */
+.home-img::before,
+.home-img::after {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border: 3px solid var(--skin-color);
+}
+
+.home-img::before {
+    top: -15px;
+    right: -15px;
+    border-bottom: none;
+    border-left: none;
+}
+
+.home-img::after {
+    bottom: -15px;
+    left: -15px;
+    border-top: none;
+    border-right: none;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 767px) {
+    .home .container {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-top: 60px; /* Add padding to account for fixed header */
+    }
+
+    .home .row {
+        flex-direction: column;
+    }
+
+    .home .home-info,
+    .home .home-img {
+        flex: 0 0 100%;
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .home .home-info {
+        margin-bottom: 30px; /* Add spacing between text/button and image */
+    }
+
+    .home .home-img {
+        margin-bottom: 30px; /* Add spacing below the image */
+    }
+
+    .home .home-img img {
+        width: 200px; /* Reduce image size for mobile */
+        height: 200px;
+    }
+
+    .home .home-info h3 {
+        font-size: 24px;
+    }
+
+    .home .home-info p {
+        font-size: 16px;
+    }
+
+    /* Adjust Decorative Borders for Mobile */
+    .home-img::before,
+    .home-img::after {
+        width: 40px;
+        height: 40px;
+    }
+
+    .home-img::before {
+        top: -10px;
+        right: -10px;
+    }
+
+    .home-img::after {
+        bottom: -10px;
+        left: -10px;
+    }
+
+    /* Ensure Hire Me Button Doesn't Overlap */
+    .home-info .btn.hire-me {
+        width: 100%;
+        max-width: 300px;
+        padding: 12px 20px;
+        font-size: 14px;
+        margin: 0 auto;
+        display: block;
+    }
+}
