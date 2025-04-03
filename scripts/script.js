@@ -67,3 +67,44 @@ function asideSectionTogglerBtn() {
         allSection[i].classList.toggle("open");
     }
 }
+//togler
+document.addEventListener('DOMContentLoaded', () => {
+    const navToggler = document.querySelector('.nav-toggler');
+    const aside = document.querySelector('.aside');
+
+    if (navToggler && aside) {
+        navToggler.addEventListener('click', () => {
+            aside.classList.toggle('open');
+            navToggler.classList.toggle('open');
+        });
+    }
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    const navToggler = document.querySelector('.nav-toggler');
+    const aside = document.querySelector('.aside');
+
+    if (navToggler && aside) {
+        // Toggle sidebar on click
+        navToggler.addEventListener('click', () => {
+            aside.classList.toggle('open');
+            navToggler.classList.toggle('open');
+        });
+
+        // Hide sidebar when scrolling down, show when scrolling up
+        let lastScrollTop = 0;
+        window.addEventListener('scroll', () => {
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            if (scrollTop > lastScrollTop) {
+                // Scrolling down
+                aside.classList.remove('open');
+                aside.classList.add('hide-on-scroll');
+                navToggler.classList.remove('open');
+            } else {
+                // Scrolling up
+                aside.classList.remove('hide-on-scroll');
+            }
+            lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // For Mobile or negative scrolling
+        });
+    }
+});
